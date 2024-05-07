@@ -4,5 +4,23 @@
     --white:             hsl(0, 0%, 100%);
     --platinum:             hsl(0, 0%, 91%);
     --gainsbore:             hsl(0, 0%, 90%);
-    --white:             hsl(0, 77%, 60%);
+    --red-salsa:             hwb(0 77% 9%);
+    --dim-grey:             hsl(0, 0%, 39%);
+    --red-salsa:             hsl(0, 0%, 30%);
+    --red-salsa:             hsl(0, 0%, 62%);
+    --red-salsa:             hsl(0, 0%, 64%);
+
+    --fs-28: 28px;
+    --fs-24: 24px;
+    --fs-18: 18px;
+    --fs-15: 15px;
+    --fs-14: 14px;
+
+    --fs-28: 500px;
+    --fs-28: 600px;
+    --fs-28: 700px;
+
+    --px: 60px;
+    --radius: 5px;
+    
 }
