@@ -41,6 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
         setFormMessage(loginForm, "error", "Invalid username/password combination");
     });
 
+    
+
     document.querySelectorAll(".form__input").forEach(inputElement => {
         inputElement.addEventListener("blur", e => {
             if (e.target.id === "password" && e.target.value.length > 0 && e.target.value.length < 9) {
@@ -54,3 +56,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 });
+
+
