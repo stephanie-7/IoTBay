@@ -16,49 +16,59 @@ function clearInputError(inputElement) {
     inputElement.parentElement.querySelector(".form__input-error-message").textContent = "";
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    const loginForm = document.querySelector("#login");
-    const createAccountForm = document.querySelector("#createAccount");
-    const forgotPswdForm = document.querySelector("#forgotPswd"); 
+document.addEventListener('DOMContentLoaded', function() {
+    // Get references to the forms
+    const viewForm = document.getElementById('accountDetails');
+    const updateForm = document.getElementById('updateAccountDetails');
+    const deleteForm = document.getElementById('deleteAccount');
 
+    // Get reference to the button in the view form
+    const updateButton = viewForm.querySelector('.form__button');
 
-    document.querySelector("#linkCreatAccount").addEventListener("click", (e) => {
-        e.preventDefault();
-        loginForm.classList.add("form--hidden");
-        forgotPswdForm.classList.add("form--hidden");
-        createAccountForm.classList.remove("form--hidden");
-    });
+    // Add event listener to switch to the update form
+    updateButton.addEventListener('click', function(event) {
+        // Prevent the default form submission behavior
+        event.preventDefault();
 
-    document.querySelector("#linkSignIn").addEventListener("click", (e) => {
-        e.preventDefault();
-        loginForm.classList.remove("form--hidden");
-        createAccountForm.classList.add("form--hidden");
-        forgotPswdForm.classList.add("form--hidden");
-    });
-    
-    document.querySelector("#linkForgotPswd").addEventListener("click", (e) => {
-        e.preventDefault();
-        console.log("Forgot password link clicked");
-        loginForm.classList.add("form--hidden");
-        createAccountForm.classList.add("form--hidden");
-        forgotPswdForm.classList.remove("form--hidden");
+        // Hide the view form
+        viewForm.classList.add('form--hidden');
+
+        // Show the update form
+        updateForm.classList.remove('form--hidden');
     });
 
-    document.querySelector("#linkResetSignIn").addEventListener("click", (e) => {
-        e.preventDefault();
-        loginForm.classList.remove("form--hidden");
-        createAccountForm.classList.add("form--hidden");
-        forgotPswdForm.classList.add("form--hidden");
+    // Get reference to the delete button in the update form
+    const deleteButtonUpdateForm = updateForm.querySelector('.form__button-Delete');
+
+    // Add event listener to switch to the delete form from the update form
+    deleteButtonUpdateForm.addEventListener('click', function(event) {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+
+        // Hide the update form
+        updateForm.classList.add('form--hidden');
+
+        // Show the delete form
+        deleteForm.classList.remove('form--hidden');
     });
-    
-    forgotPswdForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-    
-        // Perform AJAX/Fetch reset password
-    
-        // For demonstration purposes, simulate a success message
-        setFormMessage(forgotPswdForm, "success", "Password reset instructions sent to your email.");
+
+    // Get reference to the delete button in the view form
+    const deleteButtonViewForm = viewForm.querySelector('.form__button-Delete');
+
+    // Add event listener to switch to the delete form from the view form
+    deleteButtonViewForm.addEventListener('click', function(event) {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+
+        // Hide the view form
+        viewForm.classList.add('form--hidden');
+
+        // Show the delete form
+        deleteForm.classList.remove('form--hidden');
     });
+});
+
+
 
     const countryDropdown = document.querySelector("#country");
     const stateDropdown = document.querySelector("#state");
@@ -105,36 +115,4 @@ document.addEventListener("DOMContentLoaded", () => {
             clearInputError(e.target);
         });
 
-    });
-});
-    const backButton = document.querySelector("#forgotPswd .form__button--back");
-    backButton.addEventListener("click", () => {
-    loginForm.classList.remove("form--hidden");
-    createAccountForm.classList.add("form--hidden");
-    forgotPswdForm.classList.add("form--hidden");
-});
-
-    loginForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        // Perform AJAX/Fetch login
-
-        // For demonstration purposes, simulate an error message
-        setFormMessage(loginForm, "error", "Invalid username/password combination");
-    });
-
-    
-    document.addEventListener("DOMContentLoaded", function() {
-        const inputs = document.querySelectorAll('.form__input');
-        inputs.forEach(input => {
-            input.addEventListener('input', function() {
-                const minLength = input.getAttribute('minlength');
-                const errorMessage = input.parentElement.querySelector('.form__input-error-message');
-                if (input.value.length < minLength) {
-                    errorMessage.textContent = `Minimum ${minLength} characters required`;
-                } else {
-                    errorMessage.textContent = '';
-                }
-            });
-        });
     });

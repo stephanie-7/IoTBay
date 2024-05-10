@@ -115,6 +115,26 @@ body {
     transform: scale(0.98);
 }
 
+.form__button-SignOut{
+    font: 500 1rem "Open Sans", sans-serif;
+    width: 100%;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border: none;
+    border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s; 
+    background: #9fa09c; 
+    margin-top: 1rem; 
+}
+
+.form__button-SignOut:hover{
+    background:#666666;
+}
+
 .form__text {
     text-align: center;
 }
@@ -130,7 +150,7 @@ body {
 }
 
 .form__input--half {
-    width: calc(50% - 5px); /* Subtracting some space for margin */
+    width: calc(50% - 5px); 
 }
 
 .form__input-group--half {
@@ -159,22 +179,72 @@ body {
 }
 
 .form__input--address {
-    flex: 3; /* Address field takes up 3/4 of the width */
+    flex: 3; 
 }
 
 .form__input--postcode {
-    flex: 1; /* Postcode field takes up 1/4 of the width */
+    flex: 1; 
 }
 
-.form__text-resetPswd {
-    text-align: center;
-    margin-bottom: 2rem; /* Add some space between the title and the additional text */
-    font-size: 1rem; /* Adjust font size as needed */
-    color: #666666; /* Adjust text color */
-    line-height: 1.5; /* Adjust line height for better readability */
+.form__button-Delete {
+    font: 500 1rem "Open Sans", sans-serif;
+    width: 100%;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border: none;
+    border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s; 
+    background: var(--color-error); 
+    margin-top: 1rem; 
 }
 
-.form__text-resetPswdtext strong {
-    font-weight: bold; /* Make the text bold for emphasis */
-    color: var(--color-secondary); /* Match the color to the accent color */
+.form__button-Delete:hover {
+    background-color: darkred;
+}
+
+.form__button-Delete:active {
+    transform: scale(0.98);
+}
+
+--DELETEACCOUNTPAGE
+.form__text-deleteAccount {
+    font: 500 1rem "Open Sans", sans-serif;
+    color: #000000; 
+}
+
+.form__text-deleteAccount strong {
+    display: block;
+    color: #000000; 
+}
+
+.form__text-deleteAccount li {
+    list-style-type: disc;
+    margin-bottom: 0.5rem;
+}
+
+.form__text-deleteAccount--confirm{
+    color:#666666;
+}
+
+.form__button-DB{
+    font: 500 1rem "Open Sans", sans-serif;
+    width: 100%;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border: none;
+    border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s; 
+    background: var(--color-error); 
+}
+
+.form__button-DB:hover {
+    background-color: darkred; /* Change button color on hover */
 }
