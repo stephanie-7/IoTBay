@@ -51,7 +51,7 @@ label, img { display: block;}
 input {
     font: inherit;
     width: 100%;
-    border: none;
+   /*border: none;*/
 }
 
 input:focus { outline: 2px solid var(--azure); }

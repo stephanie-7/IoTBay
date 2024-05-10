@@ -45,12 +45,40 @@
                             <input type="text" name="cardholder-name" id="cardholder-name" class="layout-default">
                         </div>
 
-                        <div class="cardholder-name">
-                            <label for="cardholder-name" class="label-default">Cardholder name</label>
-                            <input type="text" name="cardholder-name" id="cardholder-name" class="layout-default">
+                        <div class="card-number">
+                            <label for="card-number" class="label-default">Card Number</label>
+                            <input type="text" name="card-number" id="card-number" class="layout-default">
+                        </div>
+
+                        <div class="input flex">
+                            <div class="expire date">
+                                <label for="expire date" class="label-default">Expiration Date</label>
+
+                                <div class="input-flex">
+                                    <input type="number" name="day" id="expire-date" class="input-default" placeholder="31" min="1" max="31">
+                                    <input type="number" name="month" id="expire-date" class="input-default" placeholder="12" min="1" max="12">
+                                </div>
+                            </div>
+
+                            <div class="cvv">
+                                <label for="cvv" class="label-default">CVV</label>
+                                <input type="text" name="cvv" id="cvv" class="layout-default">
+                            </div>
+
+
                         </div>
                     </form>
 
+                </div>
+
+                <button class="btn btn-primary">
+                    <b>Pay</b> $ <span id="payAmount">2.15</span>
+                </button>
+            </section>
+
+            <section class="cart">
+                <div class="cart-item-box">
+                    <h2 class="section-heading">Order Summary</h2>
                 </div>
             </section>
         </div>
