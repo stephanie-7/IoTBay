@@ -150,13 +150,33 @@
                 </div>
 
                 <div class="wrapper">
-                    <div class="discount-token"></div>
-                    <label for="token" class="label-default">Gift card/Discount code</label>
-                    <div class="wrapper-flex">
-                        <input type="text" name="discount-token" id="discount-token" class="input-default">
+                    <div class="discount-token">
+                        <label for="token" class="label-default">Gift card/Discount code</label>
+                        <div class="wrapper-flex">
+                            <input type="text" name="discount-token" id="discount-token" class="input-default">
 
-                        <button class="btn btn-outline">Apply</button>
+                            <button class="btn btn-outline">Apply</button>
+                        </div>
                     </div>
+
+                    <div class="amount">
+                        <div class="subtotal">
+                            <span>Subtotal</span> <span>$ <span id="subtotal">2.05</span></span>
+                        </div>
+
+                        <div class="tax">
+                            <span>Tax</span> <span>$ <span id="tax">0.10</span></span>
+                        </div>
+
+                        <div class="shipping">
+                            <span>Shipping</span> <span>$ <span id="shipping">0.00</span></span>
+                        </div>
+
+                        <div class="total">
+                            <span>Total</span> <span>$ <span id="total">2.15</span></span>
+                        </div>
+                    </div>
+                    
                 </div>
             </section>
         </div>
