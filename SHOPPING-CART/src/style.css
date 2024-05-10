@@ -5,10 +5,10 @@
     --platinum:             hsl(0, 0%, 91%);
     --gainsboro:             hsl(0, 0%, 90%);
     --red-salsa:             hwb(0 77% 9%);
-    --dim-grey:             hsl(0, 0%, 39%);
-    --red-salsa:             hsl(0, 0%, 30%);
-    --red-salsa:             hsl(0, 0%, 62%);
-    --red-salsa:             hsl(0, 0%, 64%);
+    --dim-gray:             hsl(0, 0%, 39%);
+    --davys-gray:             hsl(0, 0%, 30%);
+    --spanish-gray:             hsl(0, 0%, 62%);
+    --quick-silver:             hsl(0, 0%, 64%);
 
     --fs-28: 28px;
     --fs-24: 24px;
@@ -107,3 +107,33 @@ input::-webkit-outer-spin-button {
     background: var(--white);
     border-right: 1px solid var(--gainsboro);
 }
+
+.section-heading {
+    color: var(--onyx);
+    margin-bottom: 30px;
+    font-size: var(--fs-24);
+    font-weight: var(--fw-5);
+}
+
+.payment-form { margin-bottom: 40px;}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.payment-method .method {
+    border: 1px solid var(--quick-silver);
+    border-radius: var(--radius);
+    width: 50%;
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.payment-method .selected { border-color: var(--azure); }
+
