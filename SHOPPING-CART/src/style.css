@@ -93,3 +93,17 @@ input::-webkit-outer-spin-button {
     align-items: center;
     gap: 20px;
 }
+
+.heading ion-icon { font-size: 40px;}
+
+.item-flex {
+    display: flex;
+    flex-grow: 1;
+}
+
+.checkout {
+    width: 70%;
+    padding: 40px var(--px);
+    background: var(--white);
+    border-right: 1px solid var(--gainsboro);
+}
