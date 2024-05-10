@@ -16,9 +16,9 @@
     --fs-15: 15px;
     --fs-14: 14px;
 
-    --fs-28: 500px;
-    --fs-28: 600px;
-    --fs-28: 700px;
+    --fw-5: 500px;
+    --fw-6: 600px;
+    --fw-7: 700px;
 
     --px: 60px;
     --radius: 5px;
@@ -71,3 +71,25 @@ input::-webkit-outer-spin-button {
 }
 
 ::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70); }
+
+
+
+
+.container {
+    max-width: 1440px;
+    min-height: 100vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.heading {
+    font-size: var(--fs-28);
+    font-weight: var(--fw-6);
+    color: var(--onyx);
+    border-bottom: 1px solid var(--gainsboro);
+    padding: 20px var(--px);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
