@@ -51,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
         forgotPswdForm.classList.add("form--hidden");
     });
     
-    
     forgotPswdForm.addEventListener("submit", (e) => {
         e.preventDefault();
     
@@ -59,32 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
     
         // For demonstration purposes, simulate a success message
         setFormMessage(forgotPswdForm, "success", "Password reset instructions sent to your email.");
-    });
-
-    const backButton = document.querySelector("#forgotPswd .form__button--back");
-    backButton.addEventListener("click", () => {
-    loginForm.classList.remove("form--hidden");
-    createAccountForm.classList.add("form--hidden");
-    forgotPswdForm.classList.add("form--hidden");
-});
-
-    loginForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        // Perform AJAX/Fetch login
-
-        // For demonstration purposes, simulate an error message
-        setFormMessage(loginForm, "error", "Invalid username/password combination");
-    });
-
-    const postcodeInput = document.querySelector("#createAccount input[placeholder='Postcode']");
-    
-    postcodeInput.addEventListener("input", (e) => {
-        const trimmedValue = e.target.value.trim();
-        if (trimmedValue.length > 4) {
-            // Truncate the value to 4 characters
-            e.target.value = trimmedValue.slice(0, 4);
-        }
     });
 
     const countryDropdown = document.querySelector("#country");
@@ -103,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const states = {
             "UK": ["England", "Scotland", "Wales", "Northern Ireland"],
             "Australia": ["New South Wales", "Victoria", "Queensland", "Western Australia", "South Australia", "Tasmania", "Australian Capital Territory", "Northern Territory"],
-            "America": ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
+            "USA": ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
         };
 
         // Populate dropdown with corresponding states
@@ -121,16 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    const passwordInput = document.querySelector("#password");
-    const confirmPasswordInput = document.querySelector("#confirmPassword");
-
-    createAccountForm.addEventListener("submit", (e) => {
-        if (passwordInput.value !== confirmPasswordInput.value) {
-            e.preventDefault();
-            setInputError(confirmPasswordInput, "Passwords do not match");
-        }
-    });
-
     document.querySelectorAll(".form__input").forEach(inputElement => {
         inputElement.addEventListener("blur", e => {
             if (e.target.id === "password" && e.target.value.length > 0 && e.target.value.length < 8) {
@@ -144,5 +107,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 });
+    const backButton = document.querySelector("#forgotPswd .form__button--back");
+    backButton.addEventListener("click", () => {
+    loginForm.classList.remove("form--hidden");
+    createAccountForm.classList.add("form--hidden");
+    forgotPswdForm.classList.add("form--hidden");
+});
 
+    loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
 
+        // Perform AJAX/Fetch login
+
+        // For demonstration purposes, simulate an error message
+        setFormMessage(loginForm, "error", "Invalid username/password combination");
+    });
+
+    
+    document.addEventListener("DOMContentLoaded", function() {
+        const inputs = document.querySelectorAll('.form__input');
+        inputs.forEach(input => {
+            input.addEventListener('input', function() {
+                const minLength = input.getAttribute('minlength');
+                const errorMessage = input.parentElement.querySelector('.form__input-error-message');
+                if (input.value.length < minLength) {
+                    errorMessage.textContent = `Minimum ${minLength} characters required`;
+                } else {
+                    errorMessage.textContent = '';
+                }
+            });
+        });
+    });

@@ -56,7 +56,7 @@
 
     <div class="form__input-group form__input-group--address">
         <input type="text" class="form__input form__input--address" autofocus placeholder="Address">
-        <input type="text" class="form__input form__input--postcode" autofocus placeholder="Postcode">
+        <input type="text" class="form__input form__input--postcode" autofocus placeholder="Postcode" maxlength="4">
         <div class="form__input-error-message"></div>
     </div>
 
@@ -65,7 +65,7 @@
             <option value="" selected disabled>Country</option>
             <option value="UK">United Kingdom</option>
             <option value="Australia">Australia</option>
-            <option value="America">America</option>
+            <option value="USA">USA</option>
         </select>
         <select class="form__input" id="state" autofocus>
             <option value="" selected disabled>State</option>
@@ -75,14 +75,10 @@
 
    
     <div class="form__input-group">
-        <input type="password" id="password" class="form__input" autofocus placeholder="Password">
+        <input type="password" id="password" class="form__input" autofocus placeholder="Password" minlength="8">
         <div class="form__input-error-message"></div>
     </div>
 
-    <div class="form__input-group">
-        <input type="password" class="form__input" autofocus placeholder="Confirm Password">
-        <div class="form__input-error-message"></div>
-    </div>
 
     <button class="form__button" type="submit">Continue</button>
     <p class="form__text">
@@ -108,9 +104,6 @@
     <p class="form__text">
         <a class="form__link" id="linkResetSignIn">Remembered your password? Log in</a>
     </p>
-</form>
-
-
 </form>
 
     </div>
