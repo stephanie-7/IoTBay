@@ -128,3 +128,53 @@ body {
 .form__link:hover {
     text-decoration: underline;
 }
+
+.form__input--half {
+    width: calc(50% - 5px); /* Subtracting some space for margin */
+}
+
+.form__input-group--half {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.form__input-group {
+    margin-bottom: 1rem;
+    display: flex;
+}
+
+.form__input {
+    flex: 1; /* Each input takes up equal space */
+    margin-right: 5px; /* Add some space between inputs */
+}
+
+.form__input:last-child {
+    margin-right: 0; /* Remove margin from the last input to prevent extra space */
+}
+
+.form__input-group--address {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.form__input--address {
+    flex: 3; /* Address field takes up 3/4 of the width */
+}
+
+.form__input--postcode {
+    flex: 1; /* Postcode field takes up 1/4 of the width */
+}
+
+.form__text-resetPswd {
+    text-align: center;
+    margin-bottom: 2rem; /* Add some space between the title and the additional text */
+    font-size: 1rem; /* Adjust font size as needed */
+    color: #666666; /* Adjust text color */
+    line-height: 1.5; /* Adjust line height for better readability */
+}
+
+.form__text-resetPswdtext strong {
+    font-weight: bold; /* Make the text bold for emphasis */
+    color: var(--color-secondary); /* Match the color to the accent color */
+}

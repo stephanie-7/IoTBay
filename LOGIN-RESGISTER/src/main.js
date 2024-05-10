@@ -19,10 +19,13 @@ function clearInputError(inputElement) {
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.querySelector("#login");
     const createAccountForm = document.querySelector("#createAccount");
+    const forgotPswdForm = document.querySelector("#forgotPswd"); 
+
 
     document.querySelector("#linkCreatAccount").addEventListener("click", (e) => {
         e.preventDefault();
         loginForm.classList.add("form--hidden");
+        forgotPswdForm.classList.add("form--hidden");
         createAccountForm.classList.remove("form--hidden");
     });
 
@@ -30,7 +33,40 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         loginForm.classList.remove("form--hidden");
         createAccountForm.classList.add("form--hidden");
+        forgotPswdForm.classList.add("form--hidden");
     });
+    
+    document.querySelector("#linkForgotPswd").addEventListener("click", (e) => {
+        e.preventDefault();
+        console.log("Forgot password link clicked");
+        loginForm.classList.add("form--hidden");
+        createAccountForm.classList.add("form--hidden");
+        forgotPswdForm.classList.remove("form--hidden");
+    });
+
+    document.querySelector("#linkResetSignIn").addEventListener("click", (e) => {
+        e.preventDefault();
+        loginForm.classList.remove("form--hidden");
+        createAccountForm.classList.add("form--hidden");
+        forgotPswdForm.classList.add("form--hidden");
+    });
+    
+    
+    forgotPswdForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+    
+        // Perform AJAX/Fetch reset password
+    
+        // For demonstration purposes, simulate a success message
+        setFormMessage(forgotPswdForm, "success", "Password reset instructions sent to your email.");
+    });
+
+    const backButton = document.querySelector("#forgotPswd .form__button--back");
+    backButton.addEventListener("click", () => {
+    loginForm.classList.remove("form--hidden");
+    createAccountForm.classList.add("form--hidden");
+    forgotPswdForm.classList.add("form--hidden");
+});
 
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -41,11 +77,63 @@ document.addEventListener("DOMContentLoaded", () => {
         setFormMessage(loginForm, "error", "Invalid username/password combination");
     });
 
+    const postcodeInput = document.querySelector("#createAccount input[placeholder='Postcode']");
     
+    postcodeInput.addEventListener("input", (e) => {
+        const trimmedValue = e.target.value.trim();
+        if (trimmedValue.length > 4) {
+            // Truncate the value to 4 characters
+            e.target.value = trimmedValue.slice(0, 4);
+        }
+    });
+
+    const countryDropdown = document.querySelector("#country");
+    const stateDropdown = document.querySelector("#state");
+
+    countryDropdown.addEventListener("change", (e) => {
+        const selectedCountry = e.target.value;
+        populateStates(selectedCountry);
+    });
+
+    function populateStates(country) {
+        // Clear existing options
+        stateDropdown.innerHTML = '<option value="" selected disabled>Select State</option>';
+
+        // Define states for each country
+        const states = {
+            "UK": ["England", "Scotland", "Wales", "Northern Ireland"],
+            "Australia": ["New South Wales", "Victoria", "Queensland", "Western Australia", "South Australia", "Tasmania", "Australian Capital Territory", "Northern Territory"],
+            "America": ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
+        };
+
+        // Populate dropdown with corresponding states
+        if (states.hasOwnProperty(country)) {
+            states[country].forEach(state => {
+                const option = document.createElement("option");
+                option.value = state;
+                option.textContent = state;
+                stateDropdown.appendChild(option);
+            });
+        } else {
+            const option = document.createElement("option");
+            option.textContent = "No states available";
+            stateDropdown.appendChild(option);
+        }
+    }
+
+    const passwordInput = document.querySelector("#password");
+    const confirmPasswordInput = document.querySelector("#confirmPassword");
+
+    createAccountForm.addEventListener("submit", (e) => {
+        if (passwordInput.value !== confirmPasswordInput.value) {
+            e.preventDefault();
+            setInputError(confirmPasswordInput, "Passwords do not match");
+        }
+    });
 
     document.querySelectorAll(".form__input").forEach(inputElement => {
         inputElement.addEventListener("blur", e => {
-            if (e.target.id === "password" && e.target.value.length > 0 && e.target.value.length < 9) {
+            if (e.target.id === "password" && e.target.value.length > 0 && e.target.value.length < 8) {
                 setInputError(inputElement, "Password must be at least 8 characters in length");
             }
         });
