@@ -18,42 +18,41 @@
     <main class="container">
         <h1 class="heading">
             <ion-icon name="cart-outline">
+            </ion-icon> Shopping cart
+        </h1>
+
+        <div class="item-flex">
+            <section class="checkout">
                 <h2 class="section-heading">Payment Details</h2>
                 <div class="payment-form">
                     <div class="payment-method">
                         <button class="method selected">
                             <ion-icon name="card"></ion-icon>
-
                             <span>Credit Card</span>
-
                             <ion-icon class="checkmark fill" name="checkmark-circle"></ion-icon>
                         </button>
 
                         <button class="method">
-                            <ion-icon name="card"></ion-icon>
-
+                            <ion-icon name="logo-paypal"></ion-icon>
                             <span>Paypal</span>
-
                             <ion-icon class="checkmark" name="checkmark-circle-outline"></ion-icon>
                         </button>
                     </div>
 
-                    <form action="a">
+                    <form action="#">
+                        <div class="cardholder-name">
+                            <label for="cardholder-name" class="label-default">Cardholder name</label>
+                            <input type="text" name="cardholder-name" id="cardholder-name" class="layout-default">
+                        </div>
+
                         <div class="cardholder-name">
                             <label for="cardholder-name" class="label-default">Cardholder name</label>
                             <input type="text" name="cardholder-name" id="cardholder-name" class="layout-default">
                         </div>
                     </form>
+
                 </div>
-            </ion-icon> Shopping cart
-        </h1>
-
-        <div class="item-flex">
-
-            <section class="checkout">
-
             </section>
-
         </div>
     </main>
 
@@ -66,3 +65,4 @@
 
 
 </body>
+</html>

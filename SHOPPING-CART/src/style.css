@@ -3,7 +3,7 @@
     --azure:             hsl(219, 77%, 60%);
     --white:             hsl(0, 0%, 100%);
     --platinum:             hsl(0, 0%, 91%);
-    --gainsbore:             hsl(0, 0%, 90%);
+    --gainsboro:             hsl(0, 0%, 90%);
     --red-salsa:             hwb(0 77% 9%);
     --dim-grey:             hsl(0, 0%, 39%);
     --red-salsa:             hsl(0, 0%, 30%);
@@ -57,7 +57,7 @@ input {
 input:focus { outline: 2px solid var(--azure); }
 
 input::-webkit-inner-spin-button,
-input::-webkit-outer-button {
+input::-webkit-outer-spin-button {
     appearance:         none;
     -webkit-appearance: none;
     margin: 0;
