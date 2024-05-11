@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Information Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Customer Information Management</h1>
+    </header>
+
+    <div id="customer-form">
+        <input type="text" id="name" placeholder="Name">
+        <input type="email" id="email" placeholder="Email">
+        <select id="type">
+            <option value="individual">Individual</option>
+            <option value="company">Company</option>
+        </select>
+        <input type="text" id="address" placeholder="Address">
+        <button onclick="createCustomer()">Create</button>
+    </div>
+
+    <div id="customer-search">
+        <input type="text" id="search" placeholder="Search by name/type">
+        <button onclick="searchCustomer()">Search</button>
+    </div>
+
+    <div id="customer-list"></div>
+
+    <div id="customer-list">
+        <!-- Example Customer Entry -->
+        <div class="customer-entry" id="customer-entry-123"> <!-- Ensure you have a unique ID for each entry for DOM manipulation -->
+            <span><strong>Name:</strong> John Doe</span>
+            <span><strong>Email:</strong> johndoe@example.com</span>
+            <span><strong>Type:</strong> Individual</span>
+            <span><strong>Address:</strong> 123 Apple St.</span>
+            <button onclick="deleteCustomer('123')">Delete</button>
+        </div>
+    </div>
+    
+   
+    <div id="customer-list">
+        <!-- Customer entries will be dynamically generated here -->
+    </div>
+        
+
+    <script src="script.js"></script>
+</body>
+</html>
