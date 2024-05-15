@@ -1,0 +1,109 @@
+.product-list {
+  .product-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background: #fff; // 可选：为每个产品项设置白色背景
+
+    &:nth-child(even) {
+      background-color: #f2f2f2; // 偶数项使用稍暗的灰色背景
+    }
+
+    &:nth-child(odd) {
+      background-color: #fff; // 奇数项使用白色背景
+    }
+
+    .product-image {
+      flex: 1; // 图片占用1/4宽度
+      padding: 10px; // 保持图片有一定的空间
+      box-sizing: border-box; // 使内边距包含在宽度计算内
+
+      img {
+        max-width: 100%; // 限制图片最大宽度
+        max-height: 150px; // 限制图片最大高度
+        display: block; // 避免图片下方出现空间
+        margin: 0 auto; // 图片居中显示
+        
+      }
+    }
+
+    .product-details {
+      flex: 2; // 描述占用1/2宽度
+      padding: 10px; // 文本周围的空间
+      box-sizing: border-box;
+
+      h2 {
+        margin-top: 0; // 标题顶部没有间距
+      }
+    }
+
+    .counter-and-button {
+      flex: 1;
+      flex-direction: column; // 将flex布局的方向设置为列
+      align-items: center; // 将子元素居中对齐
+      justify-content: center; // 在主轴方向居中
+      gap: 10px; // 组件之间的空隙
+
+      .counter-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; // 分散对齐counter内部的元素
+        width: auto; // 或者可以设置为具体的宽度
+        padding: 5px 10px; // 根据需求调整内边距
+        
+        // 增加counter按钮的大小
+        button {
+          width: 30px; // 按钮的宽度
+          height: 30px; // 按钮的高度
+          // ...其他样式...
+        }
+
+        // 增加input的宽度和字体大小
+        input[type="number"] {
+          width: 50px; // 输入框的宽度
+          font-size: 1em; // 输入框内数字的字体大小
+          // ...其他样式...
+        }
+      }
+
+      .detail-button {
+        padding: 5px 10px; // 减少padding以减少按钮大小
+        width: auto; // 允许按钮根据内容调整大小
+        max-width: 120px; // 限制按钮的最大宽度
+        // ...其他样式...
+      }
+
+      @keyframes added-to-cart {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.3); }
+        100% { transform: scale(1); }
+      }
+      
+      .cart-added {
+        animation: added-to-cart 0.5s ease;
+      }
+      
+    }
+
+    .add-to-cart-button{
+      padding: 10px 20px;
+      background-color: #f8f9fa; // 浅灰色背景
+      color: #343a40; // 深蓝色字体
+      border: 2px solid #343a40; // 深蓝色边框
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      text-transform: uppercase;
+      
+      margin-top: 10px;
+
+      &:hover {
+        background-color: #343a40; // 鼠标悬浮时变为深蓝色
+        color: #ffffff; // 悬浮时字体变为白色
+      }
+      &:active {
+        background-color: darken(#343a40, 10%); // 鼠标点击时颜色变得更深
+      }
+    }
+  }
+}

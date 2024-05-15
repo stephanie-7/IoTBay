@@ -1,0 +1,18 @@
+.counter {
+    display: flex;
+    align-items: center;
+  }
+  
+  .counter button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+  }
+  
+  .counter input {
+    width: 50px;
+    text-align: center;
+    margin: 0 5px;
+  }
+  

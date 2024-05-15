@@ -1,0 +1,24 @@
+/* WelcomePage.css */
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .enter-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .enter-button:hover {
+    background-color: #0056b3;
+  }
+  

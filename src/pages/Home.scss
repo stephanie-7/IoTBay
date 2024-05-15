@@ -1,0 +1,65 @@
+// Home.scss
+
+.header {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.top-right {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 10px 0;
+  gap: 15px; 
+}
+
+.navigation-bar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-left: 10px; 
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-right: 10px; 
+}
+
+.full-width {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px; 
+  padding-bottom: 20px;
+}
+
+.search-bar input {
+  padding: 5px;
+}
+
+.search-bar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.top-container {
+  background-color: #000; /* 黑色背景 */
+  color: #fff; /* 白色文本 */
+}
+
+.top-right a,
+.navigation-bar a {
+  color: #fff; /* 确保链接文本也是白色 */
+}
+
+@keyframes added-to-cart {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.5); } /* 放大 20% */
+}
+
+.cart-animate {
+  animation: added-to-cart 2s ease;
+}
+
