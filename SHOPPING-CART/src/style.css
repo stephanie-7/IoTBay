@@ -282,3 +282,46 @@ input::-webkit-outer-spin-button {
 
 .product-close-btn:hover ion-icon { color: var(--red-salsa); }
 
+.discount-token {
+    padding: 40px var(--px);
+    border-top: 1px solid var(--gainsboro);
+    border-bottom: 1px solid var(--gainsboro);
+}
+
+.wrapper-flex {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.wrapper-flex input {
+    padding: 12px 15px;
+    font-weight: var(--fw-6);
+    letter-spacing: 2px;
+}
+
+.btn-outline {
+    padding: 10px 25px;
+    border: 1px solid var(--azure);
+    color: var(--azure);
+}
+
+.btn-outline:hover {
+    background: var(--azure);
+    color: var(--white);
+}
+
+.amount { padding: 40px var(--px); }
+
+.amount > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.amount > div:not(:last-child) { margin-bottom: 10px;}
+
+.amount .total {
+    font-size: var(--fs-18);
+    font-weight: var(--fw-7);
+    color: var(--onyx);
+}
