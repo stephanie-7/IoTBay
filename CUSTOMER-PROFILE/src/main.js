@@ -1,19 +1,19 @@
 function setFormMessage(formElement, type, message) {
-    const messageElement = formElement.querySelector(".form__message");
+    const messageElement = formElement.querySelector(".details-form__message");
 
     messageElement.textContent = message;
-    messageElement.classList.remove("form__message--success", "form__message--error");
-    messageElement.classList.add(`form__message--${type}`);
+    messageElement.classList.remove("details-form__message--success", "details-form__message--error");
+    messageElement.classList.add(`details-form__message--${type}`);
 }
 
 function setInputError(inputElement, message) {
-    inputElement.classList.add("form__input--error");
-    inputElement.parentElement.querySelector(".form__input-error-message").textContent = message;
+    inputElement.classList.add("details-form__input--error");
+    inputElement.parentElement.querySelector(".details-form__input-error-message").textContent = message;
 }
 
 function clearInputError(inputElement) {
-    inputElement.classList.remove("form__input--error");
-    inputElement.parentElement.querySelector(".form__input-error-message").textContent = "";
+    inputElement.classList.remove("details-form__input--error");
+    inputElement.parentElement.querySelector(".details-form__input-error-message").textContent = "";
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const deleteForm = document.getElementById('deleteAccount');
 
     // Get reference to the button in the view form
-    const updateButton = viewForm.querySelector('.form__button');
+    const updateButton = viewForm.querySelector('.details-form__button');
 
     // Add event listener to switch to the update form
     updateButton.addEventListener('click', function(event) {
@@ -31,14 +31,14 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
 
         // Hide the view form
-        viewForm.classList.add('form--hidden');
+        viewForm.classList.add('details-form--hidden');
 
         // Show the update form
-        updateForm.classList.remove('form--hidden');
+        updateForm.classList.remove('details-form--hidden');
     });
 
     // Get reference to the delete button in the update form
-    const deleteButtonUpdateForm = updateForm.querySelector('.form__button-Delete');
+    const deleteButtonUpdateForm = updateForm.querySelector('.details-form__button-Delete');
 
     // Add event listener to switch to the delete form from the update form
     deleteButtonUpdateForm.addEventListener('click', function(event) {
@@ -46,14 +46,14 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
 
         // Hide the update form
-        updateForm.classList.add('form--hidden');
+        updateForm.classList.add('details-form--hidden');
 
         // Show the delete form
-        deleteForm.classList.remove('form--hidden');
+        deleteForm.classList.remove('details-form--hidden');
     });
 
     // Get reference to the delete button in the view form
-    const deleteButtonViewForm = viewForm.querySelector('.form__button-Delete');
+    const deleteButtonViewForm = viewForm.querySelector('.details-form__button-Delete');
 
     // Add event listener to switch to the delete form from the view form
     deleteButtonViewForm.addEventListener('click', function(event) {
@@ -61,14 +61,11 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
 
         // Hide the view form
-        viewForm.classList.add('form--hidden');
+        viewForm.classList.add('details-form--hidden');
 
         // Show the delete form
-        deleteForm.classList.remove('form--hidden');
+        deleteForm.classList.remove('details-form--hidden');
     });
-});
-
-
 
     const countryDropdown = document.querySelector("#country");
     const stateDropdown = document.querySelector("#state");
@@ -104,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    document.querySelectorAll(".form__input").forEach(inputElement => {
+    document.querySelectorAll(".details-form__input").forEach(inputElement => {
         inputElement.addEventListener("blur", e => {
             if (e.target.id === "password" && e.target.value.length > 0 && e.target.value.length < 8) {
                 setInputError(inputElement, "Password must be at least 8 characters in length");
@@ -116,3 +113,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
     });
+});

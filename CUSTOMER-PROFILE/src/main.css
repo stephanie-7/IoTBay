@@ -16,7 +16,7 @@ body {
     background-size: cover;
 }
 
-.container {
+.details-container {
     width: 400px;
     max-width: 400px;
     margin: 1rem;
@@ -26,47 +26,47 @@ body {
     background: whitesmoke;
 }
 
-.container, 
-.form__input, 
-.form__button{
+.details-container, 
+.details-form__input, 
+.details-form__button{
     font: 500 1rem "Open Sans", sans-serif;
 }
 
-.form--hidden {
+.details-form--hidden {
     display: none;
 }
 
-.form > *:first-child {
+.details-form > *:first-child {
     margin-top: 0;
 }
 
-.form >*:last-child {
+.details-form >*:last-child {
     margin-bottom: 0;
 }
 
-.form__title {
+.details-form__title {
     margin-bottom: 1rem;
     text-align: center;
 }
 
-.form__message {
+.details-form__message {
     text-align: center;
     margin-bottom: .75rem;
 }
 
-.form__message--success {
+.details-form__message--success {
     color: var(--color-success);
 }
 
-.form__message--error {
+.details-form__message--error {
     color: var(--color-error);
 }
 
-.form__input-group {
+.details-form__input-group {
     margin-bottom: 1rem;
 }
 
-.form__input {
+.details-form__input {
     display: block;
     width: 100%;
     padding: 0.75rem;
@@ -78,23 +78,23 @@ body {
     transition: background 0.2s, border-color 0.2s;
 }
 
-.form__input:focus {
+.details-form__input:focus {
     border-color: var(--color-primary);
     background: #ffffff;
 }
 
-.form__input--error {
+.details-form__input--error {
     color: var(--color-error);
     border-color: var(--color-error);
 }
 
-.form__input-error-message {
+.details-form__input-error-message {
     margin-top: 0.5rem;
     font-size: 0.85rem;
     color: var(--color-error);
 }
 
-.form__button {
+.details-form__button {
     width: 100%;
     padding: 1rem 2rem;
     font-weight: bold;
@@ -107,15 +107,15 @@ body {
     background: var(--color-primary);
 }
 
-.form__button:hover {
+.details-form__button:hover {
     background: var(--color-primary-dark);
 }
 
-.form__button:active {
+.details-form__button:active {
     transform: scale(0.98);
 }
 
-.form__button-SignOut{
+.details-form__button-SignOut{
     font: 500 1rem "Open Sans", sans-serif;
     width: 100%;
     padding: 1rem 2rem;
@@ -131,62 +131,62 @@ body {
     margin-top: 1rem; 
 }
 
-.form__button-SignOut:hover{
+.details-form__button-SignOut:hover{
     background:#666666;
 }
 
-.form__text {
+.details-form__text {
     text-align: center;
 }
 
-.form__link {
+.details-form__link {
     color: var(--color-secondary);
     text-decoration: none;
     cursor: pointer;
 }
 
-.form__link:hover {
+.details-form__link:hover {
     text-decoration: underline;
 }
 
-.form__input--half {
+.details-form__input--half {
     width: calc(50% - 5px); 
 }
 
-.form__input-group--half {
+.details-form__input-group--half {
     display: flex;
     justify-content: space-between;
     margin-bottom: 1rem;
 }
 
-.form__input-group {
+.details-form__input-group {
     margin-bottom: 1rem;
     display: flex;
 }
 
-.form__input {
+.details-form__input {
     flex: 1; /* Each input takes up equal space */
     margin-right: 5px; /* Add some space between inputs */
 }
 
-.form__input:last-child {
+.details-form__input:last-child {
     margin-right: 0; /* Remove margin from the last input to prevent extra space */
 }
 
-.form__input-group--address {
+.details-form__input-group--address {
     display: flex;
     margin-bottom: 1rem;
 }
 
-.form__input--address {
+.details-form__input--address {
     flex: 3; 
 }
 
-.form__input--postcode {
+.details-form__input--postcode {
     flex: 1; 
 }
 
-.form__button-Delete {
+.details-form__button-Delete {
     font: 500 1rem "Open Sans", sans-serif;
     width: 100%;
     padding: 1rem 2rem;
@@ -202,35 +202,35 @@ body {
     margin-top: 1rem; 
 }
 
-.form__button-Delete:hover {
+.details-form__button-Delete:hover {
     background-color: darkred;
 }
 
-.form__button-Delete:active {
+.details-form__button-Delete:active {
     transform: scale(0.98);
 }
 
 --DELETEACCOUNTPAGE
-.form__text-deleteAccount {
+.details-form__text-deleteAccount {
     font: 500 1rem "Open Sans", sans-serif;
     color: #000000; 
 }
 
-.form__text-deleteAccount strong {
+.details-form__text-deleteAccount strong {
     display: block;
     color: #000000; 
 }
 
-.form__text-deleteAccount li {
+.details-form__text-deleteAccount li {
     list-style-type: disc;
     margin-bottom: 0.5rem;
 }
 
-.form__text-deleteAccount--confirm{
+.details-form__text-deleteAccount--confirm{
     color:#666666;
 }
 
-.form__button-DB{
+.details-form__button-DB{
     font: 500 1rem "Open Sans", sans-serif;
     width: 100%;
     padding: 1rem 2rem;
@@ -245,6 +245,6 @@ body {
     background: var(--color-error); 
 }
 
-.form__button-DB:hover {
+.details-form__button-DB:hover {
     background-color: darkred; /* Change button color on hover */
 }
