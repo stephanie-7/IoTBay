@@ -27,12 +27,8 @@ body {
 }
 
 .container, 
-.form-view-account-details__input, 
-.form-update-account-details__input,
-.form-delete-account__input,
-.form-view-account-details__button, 
-.form-update-account-details__button, 
-.form-delete-account__button {
+.form__input, 
+.form__button{
     font: 500 1rem "Open Sans", sans-serif;
 }
 
@@ -40,53 +36,37 @@ body {
     display: none;
 }
 
-.form-view-account-details > *:first-child,
-.form-update-account-details > *:first-child,
-.form-delete-account > *:first-child {
+.form > *:first-child {
     margin-top: 0;
 }
 
-.form-view-account-details >*:last-child,
-.form-update-account-details >*:last-child,
-.form-delete-account >*:last-child {
+.form >*:last-child {
     margin-bottom: 0;
 }
 
-.form-view-account-details__title,
-.form-update-account-details__title,
-.form-delete-account__title {
+.form__title {
     margin-bottom: 1rem;
     text-align: center;
 }
 
-.form-view-account-details__message,
-.form-update-account-details__message,
-.form-delete-account__message {
+.form__message {
     text-align: center;
     margin-bottom: .75rem;
 }
 
-.form-view-account-details__message--success,
-.form-update-account-details__message--success,
-.form-delete-account__message--success {
+.form__message--success {
     color: var(--color-success);
 }
 
-.form-view-account-details__message--error,
-.form-update-account-details__message--error,
-.form-delete-account__message--error {
+.form__message--error {
     color: var(--color-error);
 }
 
-.form-view-account-details__input-group,
-.form-update-account-details__input-group,
-.form-delete-account__input-group {
+.form__input-group {
     margin-bottom: 1rem;
 }
 
-.form-view-account-details__input,
-.form-update-account-details__input,
-.form-delete-account__input {
+.form__input {
     display: block;
     width: 100%;
     padding: 0.75rem;
@@ -98,31 +78,23 @@ body {
     transition: background 0.2s, border-color 0.2s;
 }
 
-.form-view-account-details__input:focus,
-.form-update-account-details__input:focus,
-.form-delete-account__input:focus {
+.form__input:focus {
     border-color: var(--color-primary);
     background: #ffffff;
 }
 
-.form-view-account-details__input--error,
-.form-update-account-details__input--error,
-.form-delete-account__input--error {
+.form__input--error {
     color: var(--color-error);
     border-color: var(--color-error);
 }
 
-.form-view-account-details__input-error-message,
-.form-update-account-details__input-error-message,
-.form-delete-account__input-error-message {
+.form__input-error-message {
     margin-top: 0.5rem;
     font-size: 0.85rem;
     color: var(--color-error);
 }
 
-.form-view-account-details__button,
-.form-update-account-details__button,
-.form-delete-account__button {
+.form__button {
     width: 100%;
     padding: 1rem 2rem;
     font-weight: bold;
@@ -135,21 +107,15 @@ body {
     background: var(--color-primary);
 }
 
-.form-view-account-details__button:hover,
-.form-update-account-details__button:hover,
-.form-delete-account__button:hover {
+.form__button:hover {
     background: var(--color-primary-dark);
 }
 
-.form-view-account-details__button:active,
-.form-update-account-details__button:active,
-.form-delete-account__button:active {
+.form__button:active {
     transform: scale(0.98);
 }
 
-.form-view-account-details__button-signout,
-.form-update-account-details__button-signout,
-.form-delete-account__button-signout {
+.form__button-SignOut{
     font: 500 1rem "Open Sans", sans-serif;
     width: 100%;
     padding: 1rem 2rem;
@@ -165,87 +131,62 @@ body {
     margin-top: 1rem; 
 }
 
-.form-view-account-details__button-signout:hover,
-.form-update-account-details__button-signout:hover,
-.form-delete-account__button-signout:hover {
+.form__button-SignOut:hover{
     background:#666666;
 }
 
-.form-view-account-details__text,
-.form-update-account-details__text,
-.form-delete-account__text {
+.form__text {
     text-align: center;
 }
 
-.form-view-account-details__link,
-.form-update-account-details__link,
-.form-delete-account__link {
+.form__link {
     color: var(--color-secondary);
     text-decoration: none;
     cursor: pointer;
 }
 
-.form-view-account-details__link:hover,
-.form-update-account-details__link:hover,
-.form-delete-account__link:hover {
+.form__link:hover {
     text-decoration: underline;
 }
 
-.form-view-account-details__input--half,
-.form-update-account-details__input--half,
-.form-delete-account__input--half {
+.form__input--half {
     width: calc(50% - 5px); 
 }
 
-.form-view-account-details__input-group--half,
-.form-update-account-details__input-group--half,
-.form-delete-account__input-group--half {
+.form__input-group--half {
     display: flex;
     justify-content: space-between;
     margin-bottom: 1rem;
 }
 
-.form-view-account-details__input-group,
-.form-update-account-details__input-group,
-.form-delete-account__input-group {
+.form__input-group {
     margin-bottom: 1rem;
     display: flex;
 }
 
-.form-view-account-details__input,
-.form-update-account-details__input,
-.form-delete-account__input {
-    flex: 1;
-    margin-right: 5px;
+.form__input {
+    flex: 1; /* Each input takes up equal space */
+    margin-right: 5px; /* Add some space between inputs */
 }
 
-.form-view-account-details__input:last-child,
-.form-update-account-details__input:last-child,
-.form-delete-account__input:last-child {
-    margin-right: 0;
+.form__input:last-child {
+    margin-right: 0; /* Remove margin from the last input to prevent extra space */
 }
 
-.form-view-account-details__input-group--address,
-.form-update-account-details__input-group--address,
-.form-delete-account__input-group--address {
+.form__input-group--address {
     display: flex;
     margin-bottom: 1rem;
 }
 
-.form-view-account-details__input--address,
-.form-update-account-details__input--address,
-.form-delete-account__input--address {
+.form__input--address {
     flex: 3; 
 }
 
-.form-view-account-details__input--postcode,
-.form-update-account-details__input--postcode,
-.form-delete-account__input--postcode {
+.form__input--postcode {
     flex: 1; 
 }
 
-.form-update-account-details__button-delete,
-.form-delete-account__button-delete {
+.form__button-Delete {
     font: 500 1rem "Open Sans", sans-serif;
     width: 100%;
     padding: 1rem 2rem;
@@ -261,36 +202,35 @@ body {
     margin-top: 1rem; 
 }
 
-.form-update-account-details__button-delete:hover,
-.form-delete-account__button-delete:hover {
+.form__button-Delete:hover {
     background-color: darkred;
 }
 
-.form-update-account-details__button-delete:active,
-.form-delete-account__button-delete:active {
+.form__button-Delete:active {
     transform: scale(0.98);
 }
 
-.form-delete-account__text-deleteAccount {
+--DELETEACCOUNTPAGE
+.form__text-deleteAccount {
     font: 500 1rem "Open Sans", sans-serif;
     color: #000000; 
 }
 
-.form-delete-account__text-deleteAccount strong {
+.form__text-deleteAccount strong {
     display: block;
     color: #000000; 
 }
 
-.form-delete-account__text-deleteAccount li {
+.form__text-deleteAccount li {
     list-style-type: disc;
     margin-bottom: 0.5rem;
 }
 
-.form-delete-account__text-deleteAccount--confirm {
+.form__text-deleteAccount--confirm{
     color:#666666;
 }
 
-.form-delete-account__button-db {
+.form__button-DB{
     font: 500 1rem "Open Sans", sans-serif;
     width: 100%;
     padding: 1rem 2rem;
@@ -305,6 +245,6 @@ body {
     background: var(--color-error); 
 }
 
-.form-delete-account__button-db:hover {
-    background-color: darkred;
+.form__button-DB:hover {
+    background-color: darkred; /* Change button color on hover */
 }
