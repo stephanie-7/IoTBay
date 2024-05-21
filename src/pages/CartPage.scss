@@ -1,0 +1,82 @@
+// 在 CartPage.scss 文件中
+
+.cart-page {
+    padding: 20px;
+  
+    .cart-table {
+      width: 100%;
+      border-collapse: collapse;
+      thead {
+        tr {
+          background-color: #eee;
+          th {
+            padding: 10px;
+            text-align: left;
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+  
+            &:first-child {
+              width: 100px; // 调整为适合你图片大小的宽度
+            }
+  
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+  
+    .remove-item {
+        padding: 8px 16px;
+        background-color: #0069d9;  // Bootstrap绿色按钮的颜色
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        
+        &:hover {
+          background-color: darken(#0069d9, 10%); // 鼠标悬浮时颜色变深
+        }
+        &:active {
+          background-color: darken(#0069d9, 20%); // 鼠标点击时颜色更深
+        }
+      }
+  
+    .cart-summary {
+      text-align: right;
+      margin-top: 20px;
+      p {
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+  
+      .checkout-button {
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-top: 10px;
+
+        &:hover {
+            background-color: darken(#28a745, 10%); // 鼠标悬浮时颜色变深
+          }
+          &:active {
+            background-color: darken(#28a745, 20%); // 鼠标点击时颜色更深
+          }
+      }
+    }
+  }
+  
