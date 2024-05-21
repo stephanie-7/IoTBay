@@ -1,19 +1,19 @@
 function setFormMessage(formElement, type, message) {
-    const messageElement = formElement.querySelector(".form-view-account-details__message, .form-update-account-details__message, .form-delete-account__message");
+    const messageElement = formElement.querySelector(`.${formElement.id}__message`);
 
     messageElement.textContent = message;
-    messageElement.classList.remove("form-view-account-details__message--success", "form-view-account-details__message--error", "form-update-account-details__message--success", "form-update-account-details__message--error", "form-delete-account__message--success", "form-delete-account__message--error");
-    messageElement.classList.add(`form-${type}--${type}`);
+    messageElement.classList.remove(`${formElement.id}__message--success`, `${formElement.id}__message--error`);
+    messageElement.classList.add(`${formElement.id}__message--${type}`);
 }
 
 function setInputError(inputElement, message) {
-    inputElement.classList.add("form-view-account-details__input--error", "form-update-account-details__input--error", "form-delete-account__input--error");
-    inputElement.parentElement.querySelector(".form-view-account-details__input-error-message, .form-update-account-details__input-error-message, .form-delete-account__input-error-message").textContent = message;
+    inputElement.classList.add(`${inputElement.closest('form').id}__input--error`);
+    inputElement.parentElement.querySelector(`.${inputElement.closest('form').id}__input-error-message`).textContent = message;
 }
 
 function clearInputError(inputElement) {
-    inputElement.classList.remove("form-view-account-details__input--error", "form-update-account-details__input--error", "form-delete-account__input--error");
-    inputElement.parentElement.querySelector(".form-view-account-details__input-error-message, .form-update-account-details__input-error-message, .form-delete-account__input-error-message").textContent = "";
+    inputElement.classList.remove(`${inputElement.closest('form').id}__input--error`);
+    inputElement.parentElement.querySelector(`.${inputElement.closest('form').id}__input-error-message`).textContent = "";
 }
 
 document.addEventListener('DOMContentLoaded', function() {
