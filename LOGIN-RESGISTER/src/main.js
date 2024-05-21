@@ -1,54 +1,53 @@
 function setFormMessage(formElement, type, message) {
-    const messageElement = formElement.querySelector(".form__message");
+    const messageElement = formElement.querySelector(".auth-form__message");
 
     messageElement.textContent = message;
-    messageElement.classList.remove("form__message--success", "form__message--error");
-    messageElement.classList.add(`form__message--${type}`);
+    messageElement.classList.remove("auth-form__message--success", "auth-form__message--error");
+    messageElement.classList.add(`auth-form__message--${type}`);
 }
 
 function setInputError(inputElement, message) {
-    inputElement.classList.add("form__input--error");
-    inputElement.parentElement.querySelector(".form__input-error-message").textContent = message;
+    inputElement.classList.add("auth-form__input--error");
+    inputElement.parentElement.querySelector(".auth-form__input-error-message").textContent = message;
 }
 
 function clearInputError(inputElement) {
-    inputElement.classList.remove("form__input--error");
-    inputElement.parentElement.querySelector(".form__input-error-message").textContent = "";
+    inputElement.classList.remove("auth-form__input--error");
+    inputElement.parentElement.querySelector(".auth-form__input-error-message").textContent = "";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.querySelector("#login");
     const createAccountForm = document.querySelector("#createAccount");
-    const forgotPswdForm = document.querySelector("#forgotPswd"); 
-
+    const forgotPswdForm = document.querySelector("#forgotPswd");
 
     document.querySelector("#linkCreatAccount").addEventListener("click", (e) => {
         e.preventDefault();
-        loginForm.classList.add("form--hidden");
-        forgotPswdForm.classList.add("form--hidden");
-        createAccountForm.classList.remove("form--hidden");
+        loginForm.classList.add("auth-form--hidden");
+        forgotPswdForm.classList.add("auth-form--hidden");
+        createAccountForm.classList.remove("auth-form--hidden");
     });
 
     document.querySelector("#linkSignIn").addEventListener("click", (e) => {
         e.preventDefault();
-        loginForm.classList.remove("form--hidden");
-        createAccountForm.classList.add("form--hidden");
-        forgotPswdForm.classList.add("form--hidden");
+        loginForm.classList.remove("auth-form--hidden");
+        createAccountForm.classList.add("auth-form--hidden");
+        forgotPswdForm.classList.add("auth-form--hidden");
     });
     
     document.querySelector("#linkForgotPswd").addEventListener("click", (e) => {
         e.preventDefault();
         console.log("Forgot password link clicked");
-        loginForm.classList.add("form--hidden");
-        createAccountForm.classList.add("form--hidden");
-        forgotPswdForm.classList.remove("form--hidden");
+        loginForm.classList.add("auth-form--hidden");
+        createAccountForm.classList.add("auth-form--hidden");
+        forgotPswdForm.classList.remove("auth-form--hidden");
     });
 
     document.querySelector("#linkResetSignIn").addEventListener("click", (e) => {
         e.preventDefault();
-        loginForm.classList.remove("form--hidden");
-        createAccountForm.classList.add("form--hidden");
-        forgotPswdForm.classList.add("form--hidden");
+        loginForm.classList.remove("auth-form--hidden");
+        createAccountForm.classList.add("auth-form--hidden");
+        forgotPswdForm.classList.add("auth-form--hidden");
     });
     
     forgotPswdForm.addEventListener("submit", (e) => {
@@ -94,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    document.querySelectorAll(".form__input").forEach(inputElement => {
+    document.querySelectorAll(".auth-form__input").forEach(inputElement => {
         inputElement.addEventListener("blur", e => {
             if (e.target.id === "password" && e.target.value.length > 0 && e.target.value.length < 8) {
                 setInputError(inputElement, "Password must be at least 8 characters in length");
@@ -106,13 +105,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     });
-});
-    const backButton = document.querySelector("#forgotPswd .form__button--back");
+    
+    const backButton = document.querySelector("#forgotPswd .auth-form__button--back");
     backButton.addEventListener("click", () => {
-    loginForm.classList.remove("form--hidden");
-    createAccountForm.classList.add("form--hidden");
-    forgotPswdForm.classList.add("form--hidden");
-});
+        loginForm.classList.remove("auth-form--hidden");
+        createAccountForm.classList.add("auth-form--hidden");
+        forgotPswdForm.classList.add("auth-form--hidden");
+    });
 
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -123,13 +122,12 @@ document.addEventListener("DOMContentLoaded", () => {
         setFormMessage(loginForm, "error", "Invalid username/password combination");
     });
 
-    
     document.addEventListener("DOMContentLoaded", function() {
-        const inputs = document.querySelectorAll('.form__input');
+        const inputs = document.querySelectorAll('.auth-form__input');
         inputs.forEach(input => {
             input.addEventListener('input', function() {
                 const minLength = input.getAttribute('minlength');
-                const errorMessage = input.parentElement.querySelector('.form__input-error-message');
+                const errorMessage = input.parentElement.querySelector('.auth-form__input-error-message');
                 if (input.value.length < minLength) {
                     errorMessage.textContent = `Minimum ${minLength} characters required`;
                 } else {
@@ -138,3 +136,4 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     });
+});
